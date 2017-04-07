@@ -7,7 +7,7 @@ import pandas as pd
 
 TRAIN_SET_COUNT = 5
 VALIDATION_SET_COUNT = 3
-TEST_SET = 2
+TEST_SET_COUNT = 2
 TARGET_IMAGES = "./images/*.jpg" # All images is the same size! A size of sample images is 64x64.
 LABEL_FILEPATH = "./images/label.txt"
 PKL_FILE = "dataset.pkl.gz"
@@ -28,10 +28,10 @@ data, label = generate_dataset(TARGET_IMAGES, LABEL_FILEPATH)
 
 train_set_x = data[:TRAIN_SET_COUNT]
 val_set_x = data[TRAIN_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT]
-test_set_x = data[TRAIN_SET_COUNT+VALIDATION_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT+TEST_SET]
+test_set_x = data[TRAIN_SET_COUNT+VALIDATION_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT + TEST_SET_COUNT]
 train_set_y = label[:TRAIN_SET_COUNT]
 val_set_y = label[TRAIN_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT]
-test_set_y = label[TRAIN_SET_COUNT+VALIDATION_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT+TEST_SET]
+test_set_y = label[TRAIN_SET_COUNT+VALIDATION_SET_COUNT+1:TRAIN_SET_COUNT+VALIDATION_SET_COUNT + TEST_SET_COUNT]
 
 train_set = train_set_x, train_set_y
 val_set = val_set_x, val_set_y
