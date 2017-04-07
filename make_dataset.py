@@ -8,7 +8,7 @@ import pandas as pd
 TRAIN_SET_COUNT = 5
 VALIDATION_SET_COUNT = 3
 TEST_SET = 2
-TARGET_IMAGES = "./images/*.jpg"
+TARGET_IMAGES = "./images/*.jpg" # All images is the same size! A size of sample images is 64x64.
 LABEL_FILEPATH = "./images/label.txt"
 PKL_FILE = "dataset.pkl.gz"
 
