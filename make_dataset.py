@@ -16,7 +16,7 @@ def generate_dataset(glob_files, label_filepath=""):
     dataset = []
     for _, file_name in enumerate(sorted(glob(glob_files), key=len)):
         img = Image.open(file_name)
-        pixels = [list(img.getdata())]
+        pixels = list(img.getdata())
         dataset.append(pixels)
     if len(label_filepath) > 0:
         lb = pd.read_csv(label_filepath)
